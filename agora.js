@@ -51,7 +51,7 @@ const getAgora = async () => {
   });
 
   browser.close();
-  return await data;
+  return data;
 };
 // uncomment if running directly
 // getAgora();
