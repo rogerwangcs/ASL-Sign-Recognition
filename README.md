@@ -1,1 +1,1 @@
-# meal-plan-checker
+# Automated BC Meal Plan Checker
