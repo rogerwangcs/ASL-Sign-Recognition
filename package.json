@@ -1,0 +1,31 @@
+{
+  "name": "meal-plan-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "babel-node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rogerwangcs/meal-plan-checker.git"
+  },
+  "author": "Roger Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rogerwangcs/meal-plan-checker/issues"
+  },
+  "homepage": "https://github.com/rogerwangcs/meal-plan-checker#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "eslint": "^4.4.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "puppeteer": "^1.10.0"
+  }
+}
