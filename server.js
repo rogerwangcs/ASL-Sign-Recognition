@@ -14,6 +14,7 @@ app.get("/", async (req, res) => {
       console.error(`exec error: ${error}`);
       return;
     }
+    console.log(typeof(stdout))
     res.send(stdout);
   });
 
