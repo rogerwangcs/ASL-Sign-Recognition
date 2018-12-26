@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/rogerwangcs/meal-plan-checker#readme",
   "devDependencies": {
-    "eslint": "^4.4.0",
+    "eslint": "^5.6.0",
     "nodemon": "^1.11.0"
   },
   "dependencies": {

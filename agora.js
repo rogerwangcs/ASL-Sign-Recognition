@@ -30,10 +30,10 @@ const getAgora = async () => {
   );
 
   await page.waitForSelector("input#username");
-  await page.type("input#username", process.env.USER);
+  await page.type("input#username", process.env.BC_USER);
 
-  await page.waitForSelector("input#username");
-  await page.type("input#password", process.env.PASS);
+  await page.waitForSelector("input#password");
+  await page.type("input#password", process.env.BC_PASS);
 
   await page.waitForSelector('button[type="submit"]', { visible: true });
   await page.click('button[type="submit"]');
