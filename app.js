@@ -1,10 +1,17 @@
 "use strict";
-
 const express = require("express");
 const app = express();
 
+const multer = require("multer");
+var storage = multer.diskStorage({
+  destination: __dirname + "/inputs/",
+  filename: function(req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  }
+});
+var upload = multer({ storage: storage });
+
 const { execFile } = require("child_process");
-const agora = require("./agora.js");
 
 app.use((req, res, next) => {
   // allow CORS
@@ -16,15 +23,17 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/", async (req, res) => {
-  const rawData = await agora();
+app.post("/upload", upload.single("file"), (req, res) => {
+  if (req.body) {
+    // res.json(req.file)
+  } else throw "error";
 
-  execFile("python", ["cleandata.py", rawData], (error, stdout, stderr) => {
+  execFile("python", ["predict.py"], (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
       return;
     }
-    console.log("Balance Fetched!")
+    console.log(stdout);
     res.send(stdout);
   });
 });
